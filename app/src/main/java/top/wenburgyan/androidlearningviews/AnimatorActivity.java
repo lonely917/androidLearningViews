@@ -5,6 +5,8 @@ import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +20,9 @@ import org.w3c.dom.Text;
 public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener{
 
     final String tag = "AnimatorActivity";
-    Button button1, button2;
+    Button button1, button2, button3;
     TextView textView;
+    ViewWithAScroller viewWithAScroller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +30,13 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_animator);
         button1 = (Button) findViewById(R.id.buttonAnimate1);
         button2 = (Button) findViewById(R.id.buttonAnimate2);
+        button3 = (Button) findViewById(R.id.buttonGetCoordinate);
         textView = (TextView) findViewById(R.id.textView);
+        viewWithAScroller = (ViewWithAScroller) findViewById(R.id.viewWithAScroller);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        viewWithAScroller.setOnClickListener(this);
     }
 
     @Override
@@ -43,7 +50,21 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
             case R.id.buttonAnimate2:
                 animateTwo();
                 break;
+            case R.id.buttonGetCoordinate:
+                getCoordinate(textView);
+                break;
+            case R.id.viewWithAScroller:
+                viewWithAScroller.CustomeScroll((int)viewWithAScroller.getX()-100, (int)viewWithAScroller.getY()-100);
+//                viewWithAScroller.CustomeScroll(-400, 0);
+                break;
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void getCoordinate(View v) {
+        Log.d(tag, "click v.getX():"+v.getX()+"v.getY():"+v.getY());
+        Log.d(tag, "click v.getLeft:"+v.getLeft()+"v.getTop():"+v.getTop()+"v.getRight():"+v.getRight()+"v.getBottom():"+v.getBottom());
+        Log.d(tag, "click v.getTranslationX:"+v.getTranslationX()+"v.getTranslationY:"+v.getTranslationY()+"v.getTranslationZ():"+v.getTranslationZ());
     }
 
     private void animateOne() {
@@ -101,4 +122,5 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
         animator.setTarget(textView);
         animator.start();
     }
+
 }
