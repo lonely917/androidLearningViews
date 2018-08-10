@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="top.wenburgyan.androidlearningviews.ViewEventDispatchActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:padding="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@color/colorAccent" />
+
+    <top.wenburgyan.androidlearningviews.LinearLayoutForEvent
+        android:id="@+id/linearLayoutForEvent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@android:color/holo_blue_light">
+
+        <top.wenburgyan.androidlearningviews.ViewForEvent
+            android:id="@+id/viewForEvent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorPrimary"/>
+    </top.wenburgyan.androidlearningviews.LinearLayoutForEvent>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view group clickable"
+        android:onClick="viewGroupClickable"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view clickable"
+        android:onClick="viewClickable"/>
+</LinearLayout>

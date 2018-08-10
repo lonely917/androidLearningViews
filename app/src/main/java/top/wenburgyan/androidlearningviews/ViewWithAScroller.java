@@ -3,15 +3,18 @@ package top.wenburgyan.androidlearningviews;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Scroller;
+import android.widget.TextView;
 
 /**
  * Created by ywb on 2018-08-06.
  */
 
-public class ViewWithAScroller extends View {
+public class ViewWithAScroller extends android.support.v7.widget.AppCompatTextView {
     private Scroller mScroller;
+    private static final String Tag = "ViewWithAScroller";
     public ViewWithAScroller(Context context) {
         super(context);
         mScroller = new Scroller(context);
@@ -27,16 +30,29 @@ public class ViewWithAScroller extends View {
         super.computeScroll();
         if(mScroller.computeScrollOffset())
         {
-            ((View)getParent()).scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+//            ((View)getParent()).scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+            scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+            Log.d(Tag, "getScrollX"+getScrollX()+"getScrollY"+getScrollY());
+            Log.d(Tag, "mScroller.getCurrX()"+mScroller.getCurrX()+"mScroller.getCurrY()"+mScroller.getCurrY());
             invalidate();
         }
     }
 
-    public void CustomeScroll(int destX, int destY)
+    public void CustomeScrollTo(int destX, int destY)
     {
         int startX = getScrollX();
         int startY = getScrollY();
-        mScroller.startScroll(startX, startY, destX-startX, destY-startY, 1000);
+        Log.d(Tag, "CustomeScrollTo: "+"startX"+startX+"startY"+startY+"destX"+destX+"destY"+destY);
+        mScroller.startScroll(startX, startY, destX-startX, destY-startY, 4000);
+        invalidate();
+    }
+
+    public void CustomeScrollBy(int dx, int dy)
+    {
+        int startX = getScrollX();
+        int startY = getScrollY();
+        Log.d(Tag, "CustomeScrollTo: "+"startX"+startX+"startY"+startY+"destX"+startX+dx+"destY"+startY+dy);
+        mScroller.startScroll(startX, startY, dx,dy, 4000);
         invalidate();
     }
 }

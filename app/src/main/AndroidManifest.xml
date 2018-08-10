@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ViewCoordinateActivity" />
-        <activity android:name=".AnimatorActivity"></activity>
+        <activity android:name=".AnimatorActivity" />
+        <activity android:name=".ViewEventDispatchActivity"></activity>
     </application>
 
 </manifest>

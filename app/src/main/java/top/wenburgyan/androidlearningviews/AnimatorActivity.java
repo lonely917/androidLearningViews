@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener{
 
     final String tag = "AnimatorActivity";
@@ -54,8 +52,13 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
                 getCoordinate(textView);
                 break;
             case R.id.viewWithAScroller:
-                viewWithAScroller.CustomeScroll((int)viewWithAScroller.getX()-100, (int)viewWithAScroller.getY()-100);
-//                viewWithAScroller.CustomeScroll(-400, 0);
+                Log.d(tag, "click v.getX():"+v.getX()+"v.getY():"+v.getY());
+                Log.d(tag, "click v.getLeft:"+v.getLeft()+"v.getTop():"+v.getTop()+"v.getRight():"+v.getRight()+"v.getBottom():"+v.getBottom());
+                Log.d(tag, "click v.getTranslationX:"+v.getTranslationX()+"v.getTranslationY:"+v.getTranslationY());
+                Log.d(tag, "click v.getScrollX:"+v.getScrollX()+"v.getScrollY():"+v.getScrollY());
+              //  viewWithAScroller.CustomeScrollTo(-150, -150);
+//                viewWithAScroller.CustomeScrollBy(0,0);
+                viewWithAScroller.CustomeScrollTo(100, 0);
                 break;
         }
     }

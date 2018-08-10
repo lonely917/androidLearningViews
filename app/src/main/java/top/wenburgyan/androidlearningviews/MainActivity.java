@@ -13,8 +13,8 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     ListView listView;
     BaseAdapter adapter;
-    String[] items = {"a", "b"};
-    Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class};
+    String[] items = {"a", "b","c"};
+    Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class,ViewEventDispatchActivity.class};
 
 
     @Override
