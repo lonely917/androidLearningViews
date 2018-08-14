@@ -34,12 +34,28 @@
         android:gravity="center_horizontal"
         android:background="@android:color/holo_blue_light">
 
-        <top.wenburgyan.androidlearningviews.ViewForEvent
-            android:id="@+id/viewForEvent"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:layout_gravity="center_vertical"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimaryDark">
+
+            <top.wenburgyan.androidlearningviews.ViewForEvent
+                android:id="@+id/viewForEvent"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorPrimary"/>
+            <top.wenburgyan.androidlearningviews.ViewForEvent
+                android:id="@+id/viewForEvent2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="right"
+                android:clickable="true"
+                android:background="@color/colorAccent"/>
+        </FrameLayout>
+
+
     </top.wenburgyan.androidlearningviews.LinearLayoutForEvent>
 
     <Button
