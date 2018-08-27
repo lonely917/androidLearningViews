@@ -38,6 +38,12 @@ public class LinearLayoutForEvent extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.d(tag, "onInterceptTouchEvent "+ev.getAction());
+
+        //following code to see the behavior of onInterceptTouchEvent
+//        if(ev.getAction() == MotionEvent.ACTION_MOVE){
+//            Log.d(tag, "modify onInterceptTouchEvent return : "+true);
+//            return  true;
+//        }
         return super.onInterceptTouchEvent(ev);
     }
 
