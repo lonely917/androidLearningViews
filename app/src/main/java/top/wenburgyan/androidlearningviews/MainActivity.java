@@ -1,6 +1,5 @@
 package top.wenburgyan.androidlearningviews;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +10,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-    ListView listView;
-    BaseAdapter adapter;
-    String[] items = {"a", "b","c"};
-    Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class,ViewEventDispatchActivity.class};
+    private ListView listView;
+    private BaseAdapter adapter;
+    private final String[] items = {"view坐标", "view动画","view事件传递"};
+    private final Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class,ViewEventDispatchActivity.class};
 
 
     @Override
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.listView);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

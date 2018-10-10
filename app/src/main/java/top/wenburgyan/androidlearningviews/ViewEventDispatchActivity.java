@@ -11,12 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ViewEventDispatchActivity extends AppCompatActivity {
-    String TAG = "ViewEventDispatchActivity";
-    Button mTestButton;
-    TextView mTextView;
-    ImageView mImageView;
-    ViewForEvent viewForEvent;
-    LinearLayoutForEvent viewLinearLayoutForEvent;
+    private final String TAG = "ViewEventDispatchActivity";
+    private Button mTestButton;
+    private TextView mTextView;
+    private ImageView mImageView;
+    private ViewForEvent viewForEvent;
+    private LinearLayoutForEvent viewLinearLayoutForEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

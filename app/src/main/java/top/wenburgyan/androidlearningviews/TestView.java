@@ -13,8 +13,9 @@ import android.widget.LinearLayout;
  */
 
 public class TestView extends View {
-    int lastX, lastY;
-    String tag = "TestView";
+    private int lastX;
+    private int lastY;
+    private final String tag = "TestView";
 
     public TestView(Context context) {
         super(context);

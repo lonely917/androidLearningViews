@@ -9,8 +9,8 @@ import android.view.View;
 
 public class ViewCoordinateActivity extends AppCompatActivity {
 
-    String tag = "ViewCoordinateActivity";
-    View view;
+    private final String tag = "ViewCoordinateActivity";
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

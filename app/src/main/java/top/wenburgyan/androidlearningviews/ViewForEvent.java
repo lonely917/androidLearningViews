@@ -12,7 +12,7 @@ import android.view.View;
  */
 
 public class ViewForEvent extends View {
-    String tag = "ViewForEvent"+this.getId();
+    private final String tag = "ViewForEvent"+this.getId();
     public ViewForEvent(Context context) {
         super(context);
     }

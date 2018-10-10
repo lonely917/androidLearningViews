@@ -4,9 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
 import android.widget.Scroller;
-import android.widget.TextView;
 
 /**
  * Created by ywb on 2018-08-06.
@@ -38,11 +36,11 @@ public class ViewWithAScroller extends android.support.v7.widget.AppCompatTextVi
         }
     }
 
-    public void CustomeScrollTo(int destX, int destY)
+    public void CustomScrollTo(int destX, int destY)
     {
         int startX = getScrollX();
         int startY = getScrollY();
-        Log.d(Tag, "CustomeScrollTo: "+"startX"+startX+"startY"+startY+"destX"+destX+"destY"+destY);
+        Log.d(Tag, "CustomScrollTo: "+"startX"+startX+"startY"+startY+"destX"+destX+"destY"+destY);
         mScroller.startScroll(startX, startY, destX-startX, destY-startY, 4000);
         invalidate();
     }
@@ -51,7 +49,7 @@ public class ViewWithAScroller extends android.support.v7.widget.AppCompatTextVi
     {
         int startX = getScrollX();
         int startY = getScrollY();
-        Log.d(Tag, "CustomeScrollTo: "+"startX"+startX+"startY"+startY+"destX"+startX+dx+"destY"+startY+dy);
+        Log.d(Tag, "CustomScrollTo: "+"startX"+startX+"startY"+startY+"destX"+startX+dx+"destY"+startY+dy);
         mScroller.startScroll(startX, startY, dx,dy, 4000);
         invalidate();
     }

@@ -17,10 +17,12 @@ import android.widget.Toast;
 
 public class AnimatorActivity extends AppCompatActivity implements View.OnClickListener{
 
-    final String tag = "AnimatorActivity";
-    Button button1, button2, button3;
-    TextView textView;
-    ViewWithAScroller viewWithAScroller;
+    private final String tag = "AnimatorActivity";
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private TextView textView;
+    private ViewWithAScroller viewWithAScroller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +58,9 @@ public class AnimatorActivity extends AppCompatActivity implements View.OnClickL
                 Log.d(tag, "click v.getLeft:"+v.getLeft()+"v.getTop():"+v.getTop()+"v.getRight():"+v.getRight()+"v.getBottom():"+v.getBottom());
                 Log.d(tag, "click v.getTranslationX:"+v.getTranslationX()+"v.getTranslationY:"+v.getTranslationY());
                 Log.d(tag, "click v.getScrollX:"+v.getScrollX()+"v.getScrollY():"+v.getScrollY());
-              //  viewWithAScroller.CustomeScrollTo(-150, -150);
+              //  viewWithAScroller.CustomScrollTo(-150, -150);
 //                viewWithAScroller.CustomeScrollBy(0,0);
-                viewWithAScroller.CustomeScrollTo(100, 0);
+                viewWithAScroller.CustomScrollTo(100, 0);
                 break;
         }
     }

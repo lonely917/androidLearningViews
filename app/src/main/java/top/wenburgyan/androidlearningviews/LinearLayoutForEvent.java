@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 /**
@@ -13,7 +12,7 @@ import android.widget.LinearLayout;
  */
 
 public class LinearLayoutForEvent extends LinearLayout {
-    public final String tag = "LinearLayoutForEvent";
+    private final String tag = "LinearLayoutForEvent";
 
     public LinearLayoutForEvent(Context context) {
         super(context);
