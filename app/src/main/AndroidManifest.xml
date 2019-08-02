@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="top.wenburgyan.androidlearningviews">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +22,8 @@
         </activity>
         <activity android:name=".ViewCoordinateActivity" />
         <activity android:name=".AnimatorActivity" />
-        <activity android:name=".ViewEventDispatchActivity"></activity>
+        <activity android:name=".ViewEventDispatchActivity" />
+        <activity android:name=".FileChooseTestActivity"></activity>
     </application>
 
 </manifest>

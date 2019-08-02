@@ -12,8 +12,8 @@ import android.widget.ListView;
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private BaseAdapter adapter;
-    private final String[] items = {"view坐标", "view动画","view事件传递"};
-    private final Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class,ViewEventDispatchActivity.class};
+    private final String[] items = {"view坐标", "view动画","view事件传递","文件选择"};
+    private final Class[] activities = {ViewCoordinateActivity.class, AnimatorActivity.class,ViewEventDispatchActivity.class,FileChooseTestActivity.class};
 
 
     @Override
